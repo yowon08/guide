@@ -32,7 +32,7 @@ export const guideDatabase: GuideDoc[] = [
     title: "예스터데이 세계관이란?",
     subtitle: "처음 온 사람을 위한 가장 짧은 설명",
     category: "필수",
-    image: "/guide/public/yesterday-logo.png",
+    image: "/public/yesterday-logo.png",
     body: [
       "예스터데이는 이능력자, 도시국가, 기관, 마물화, 영주와 세력 충돌이 얽힌 포스트 아포칼립스 세계관입니다.",
       "처음부터 모든 설정을 외울 필요는 없습니다. 먼저 캐릭터가 어디에서 왔고, 무엇을 원하며, 무엇을 두려워하는지만 정해도 충분합니다.",
