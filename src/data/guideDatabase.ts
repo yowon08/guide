@@ -12,16 +12,16 @@ export type GuideDoc = {
 
 export const levelInfo: Record<GuideLevel, { label: string; description: string }> = {
   beginner: {
-    label: "신입",
-    description: "예스터데이를 처음 접한, 맑고 깨끗한 뉴비",
+    label: "입문자",
+    description: "예스터데이를 처음 접한 사람을 위한 기본 안내",
   },
   intermediate: {
-    label: "기본",
-    description: "이전 어느정도 배웠다! 캐릭터 제작과 사건 참여를 더 깊게 하고 싶은 사람",
+    label: "중급자",
+    description: "캐릭터 제작과 사건 참여를 더 깊게 하고 싶은 사람",
   },
   advanced: {
-    label: "고인물",
-    description: "너무나 오래 있었다! 세계관의 핵심 설정과 대형 서사를 다루는 사람",
+    label: "고수",
+    description: "세계관 핵심 설정과 대형 서사를 다루는 사람",
   },
 };
 
@@ -32,7 +32,7 @@ export const guideDatabase: GuideDoc[] = [
     title: "예스터데이 세계관이란?",
     subtitle: "처음 온 사람을 위한 가장 짧은 설명",
     category: "필수",
-    image: "/public/yesterday-logo.png",
+    image: "/guide/world.png",
     body: [
       "예스터데이는 이능력자, 도시국가, 기관, 마물화, 영주와 세력 충돌이 얽힌 포스트 아포칼립스 세계관입니다.",
       "처음부터 모든 설정을 외울 필요는 없습니다. 먼저 캐릭터가 어디에서 왔고, 무엇을 원하며, 무엇을 두려워하는지만 정해도 충분합니다.",

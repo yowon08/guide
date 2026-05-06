@@ -10,6 +10,7 @@ export default function App() {
   const [selectedDocId, setSelectedDocId] = useState<string | null>(null);
   const [levelMenuOpen, setLevelMenuOpen] = useState(false);
   const [mobileDocOpen, setMobileDocOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [readDocIds, setReadDocIds] = useState<string[]>(() => {
     try {
@@ -25,6 +26,20 @@ export default function App() {
     if (!level) return [];
     return guideDatabase.filter((doc) => doc.level === level);
   }, [level]);
+
+  const filteredDocs = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+
+    if (!query) return docs;
+
+    return docs.filter((doc) => {
+      return (
+        doc.title.toLowerCase().includes(query) ||
+        doc.subtitle.toLowerCase().includes(query) ||
+        doc.category.toLowerCase().includes(query)
+      );
+    });
+  }, [docs, searchQuery]);
 
   const selectedDoc: GuideDoc | null =
     docs.find((doc) => doc.id === selectedDocId) ?? docs[0] ?? null;
@@ -58,6 +73,7 @@ export default function App() {
     setSelectedDocId(firstDoc?.id ?? null);
     setLevelMenuOpen(false);
     setMobileDocOpen(false);
+    setSearchQuery("");
   };
 
   if (!level) {
@@ -123,26 +139,38 @@ export default function App() {
             <p>{levelInfo[level].description}</p>
           </div>
 
+          <div className="search-box">
+            <input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="문서 제목, 설명, 분류 검색"
+            />
+          </div>
+
           <div className="list-items">
-            {docs.map((doc) => {
-              const isRead = readDocIds.includes(doc.id);
+            {filteredDocs.length === 0 ? (
+              <div className="empty-result">검색 결과가 없습니다.</div>
+            ) : (
+              filteredDocs.map((doc) => {
+                const isRead = readDocIds.includes(doc.id);
 
-              return (
-                <button
-                  key={doc.id}
-                  className={selectedDoc?.id === doc.id ? "active" : ""}
-                  onClick={() => openDoc(doc.id)}
-                >
-                  <div className="doc-list-top">
-                    <span className="category">{doc.category}</span>
-                    {!isRead && <span className="new-badge">NEW</span>}
-                  </div>
+                return (
+                  <button
+                    key={doc.id}
+                    className={selectedDoc?.id === doc.id ? "active" : ""}
+                    onClick={() => openDoc(doc.id)}
+                  >
+                    <div className="doc-list-top">
+                      <span className="category">{doc.category}</span>
+                      {!isRead && <span className="new-badge">NEW</span>}
+                    </div>
 
-                  <strong>{doc.title}</strong>
-                  <small>{doc.subtitle}</small>
-                </button>
-              );
-            })}
+                    <strong>{doc.title}</strong>
+                    <small>{doc.subtitle}</small>
+                  </button>
+                );
+              })
+            )}
           </div>
         </aside>
 

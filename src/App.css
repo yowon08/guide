@@ -52,11 +52,7 @@ button {
   border: 1px solid rgba(0, 255, 255, 0.14);
   border-radius: 32px;
   background:
-    linear-gradient(
-      135deg,
-      rgba(0, 255, 255, 0.045),
-      rgba(255, 0, 255, 0.025)
-    ),
+    linear-gradient(135deg, rgba(0, 255, 255, 0.045), rgba(255, 0, 255, 0.025)),
     rgba(8, 10, 18, 0.9);
   box-shadow:
     0 0 42px rgba(0, 255, 255, 0.04),
@@ -82,7 +78,6 @@ h1 {
   margin: 0;
   font-size: clamp(32px, 5vw, 56px);
   letter-spacing: -0.04em;
-
   text-shadow: none;
   filter: none;
 }
@@ -108,11 +103,7 @@ h1 {
   border: 1px solid rgba(0, 255, 255, 0.11);
   border-radius: 24px;
   background:
-    linear-gradient(
-      160deg,
-      rgba(0, 255, 255, 0.04),
-      rgba(255, 0, 255, 0.02)
-    ),
+    linear-gradient(160deg, rgba(0, 255, 255, 0.04), rgba(255, 0, 255, 0.02)),
     rgba(255, 255, 255, 0.03);
   color: #f5f7ff;
   text-align: left;
@@ -137,11 +128,7 @@ h1 {
   transform: translateY(-4px);
   border-color: rgba(255, 0, 255, 0.28);
   background:
-    linear-gradient(
-      160deg,
-      rgba(0, 255, 255, 0.055),
-      rgba(255, 0, 255, 0.03)
-    ),
+    linear-gradient(160deg, rgba(0, 255, 255, 0.055), rgba(255, 0, 255, 0.03)),
     rgba(255, 255, 255, 0.04);
 }
 
@@ -189,7 +176,6 @@ h1 {
 .archive-header h1 {
   font-size: clamp(22px, 4vw, 34px);
   color: #f5f7ff;
-
   text-shadow: none;
   filter: none;
 }
@@ -247,11 +233,7 @@ h1 {
   border: 1px solid rgba(0, 255, 255, 0.1);
   border-radius: 28px;
   background:
-    linear-gradient(
-      145deg,
-      rgba(0, 255, 255, 0.03),
-      rgba(255, 0, 255, 0.018)
-    ),
+    linear-gradient(145deg, rgba(0, 255, 255, 0.03), rgba(255, 0, 255, 0.018)),
     rgba(8, 10, 18, 0.84);
   box-shadow:
     0 0 24px rgba(0, 255, 255, 0.025),
@@ -273,13 +255,45 @@ h1 {
   margin: 0 0 8px;
   font-size: 21px;
   color: #f5f7ff;
-
   text-shadow: none;
 }
 
 .list-head p {
   margin: 0;
   color: #b9c2d2;
+  line-height: 1.6;
+}
+
+.search-box {
+  margin: 0 0 14px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #f5f7ff;
+  outline: none;
+  font-size: 15px;
+}
+
+.search-box input::placeholder {
+  color: #7f8ca3;
+}
+
+.search-box input:focus {
+  border-color: rgba(127, 232, 255, 0.34);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.empty-result {
+  padding: 18px;
+  border: 1px dashed rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  color: #9da8ba;
+  text-align: center;
   line-height: 1.6;
 }
 
@@ -349,7 +363,6 @@ h1 {
   margin: 10px 0 5px;
   font-size: 17px;
   color: #f5f7ff;
-
   text-shadow: none;
 }
 
@@ -391,7 +404,6 @@ h1 {
   line-height: 1.1;
   color: #f4f7ff;
   font-weight: 800;
-
   text-shadow: none !important;
   filter: none !important;
   mix-blend-mode: normal !important;
