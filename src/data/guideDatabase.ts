@@ -12,16 +12,16 @@ export type GuideDoc = {
 
 export const levelInfo: Record<GuideLevel, { label: string; description: string }> = {
   beginner: {
-    label: "입문자",
-    description: "예스터데이를 처음 접한 사람을 위한 기본 안내",
+    label: "신입",
+    description: "예스터데이를 처음 접한, 맑고 깨끗한 뉴비",
   },
   intermediate: {
-    label: "중급자",
-    description: "캐릭터 제작과 사건 참여를 더 깊게 하고 싶은 사람",
+    label: "기본",
+    description: "이전 어느정도 배웠다! 캐릭터 제작과 사건 참여를 더 깊게 하고 싶은 사람",
   },
   advanced: {
-    label: "고수",
-    description: "세계관 핵심 설정과 대형 서사를 다루는 사람",
+    label: "고인물",
+    description: "너무나 오래 있었다! 세계관의 핵심 설정과 대형 서사를 다루는 사람",
   },
 };
 
